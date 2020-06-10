@@ -10,7 +10,7 @@ GIT_PAT=$(az keyvault secret show --vault-name rom-work-kv-01 --name acrgithubpa
 az acr task create \
     --registry $ACR_NAME \
     --name taskhelloworld \
-    --image helloworld:v1 \
+    --image helloacrtasks:v1 \
     --context https://github.com/$GIT_USER/acr-build-helloworld-node.git \
     --file Dockerfile \
     --git-access-token $GIT_PAT
